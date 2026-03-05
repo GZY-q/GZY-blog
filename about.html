@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我 - 贡正阳个人博客</title>
+    <!-- 国内 CDN 引入字体图标 -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">GZY<span>.Dev</span></a>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="articles.html">文章</a>
+                <a href="about.html" class="active">关于我</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <div class="page-header animate-on-scroll">
+            <h1 class="section-title" style="margin-bottom: 0;">关于我</h1>
+        </div>
+
+        <section class="about-grid">
+            <aside class="about-sidebar animate-on-scroll">
+                <div class="profile-card">
+                    <div class="profile-img">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h2 class="profile-name">贡正阳</h2>
+                    <p class="profile-title">软件工程专业应届毕业生</p>
+                    <p style="color: var(--primary-color); font-weight: 500; font-size: 0.9rem;">江苏镇江</p>
+
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>13276176555</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span><a href="mailto:gede-gzy@qq.com">gede-gzy@qq.com</a></span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <span><a href="https://github.com/GZY-q" target="_blank">github.com/GZY-q</a></span>
+                        </div>
+                    </div>
+
+                    <a href="mailto:gede-gzy@qq.com" class="btn btn-primary"
+                        style="margin-top: 2rem; width: 100%; justify-content: center;">
+                        <i class="fas fa-paper-plane"></i> 联系我
+                    </a>
+                </div>
+            </aside>
+
+            <div class="about-content animate-on-scroll" style="transition-delay: 0.2s;">
+                <div class="about-content-block">
+                    <h2 class="section-title">专业技能</h2>
+                    <div class="skills-wrapper">
+                        <div class="skill-tag">
+                            <i class="fab fa-python" style="color: #38bdf8;"></i> Python
+                        </div>
+                        <div class="skill-tag">
+                            <i class="fab fa-java" style="color: #fca5a5;"></i> Java
+                        </div>
+                        <div class="skill-tag">
+                            <i class="fab fa-html5" style="color: #f97316;"></i> HTML/CSS/JS
+                        </div>
+                        <div class="skill-tag">
+                            <i class="fab fa-vuejs" style="color: #4ade80;"></i> Vue
+                        </div>
+                        <div class="skill-tag">
+                            <i class="fab fa-react" style="color: #61dafb;"></i> React
+                        </div>
+                        <div class="skill-tag">
+                            <i class="fas fa-leaf" style="color: #86efac;"></i> Spring Boot
+                        </div>
+                        <div class="skill-tag">
+                            <i class="fab fa-docker" style="color: #60a5fa;"></i> Docker
+                        </div>
+                        <div class="skill-tag">
+                            <i class="fas fa-network-wired" style="color: #a78bfa;"></i> 网络运维
+                        </div>
+                        <div class="skill-tag">
+                            <i class="fab fa-git-alt" style="color: #f43f5e;"></i> Git
+                        </div>
+                        <div class="skill-tag">
+                            <i class="fas fa-robot" style="color: #c084fc;"></i> Cursor / Trae AI
+                        </div>
+                    </div>
+                    <p style="margin-top: 1.5rem; color: #e2e8f0; line-height: 1.8;">
+                        熟练掌握 Python、Java 编程语言，具备扎实的编程基础和代码实现能力；精通 HTML、CSS、JavaScript 前端技术栈，熟练使用 Vue、React
+                        框架进行前端项目开发。同时熟悉基础网络运维、局域网部署、服务器配置和 Docker 容器化项目部署；精通 Cursor、Trae 等 AI
+                        编程工具的应用，结合自动生成与辅助设计大幅提高开发效率，规范完成 Git 项目版本控制与代码协作优化。
+                    </p>
+                </div>
+
+                <div class="about-content-block">
+                    <h2 class="section-title">教育背景</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">2022-09 ~ 2026-06</div>
+                            <h3 class="timeline-title">江苏大学京江学院 (全日制 本科)</h3>
+                            <div class="timeline-subtitle">软件工程专业 / 电气信息工程学院</div>
+                            <div class="timeline-content">
+                                <strong>主修课程:</strong> 语言类 (C++, Java, Python)、数据结构、算法、计算机网络、数据库、计算机组成原理。<br>
+                                <strong>经历说明:</strong> 当兵入伍两年期间担任连队文书负责相关上传下达工作，退伍后毅然从机械设计专业转入软件工程专业，凭借自身努力补齐专业课并通过考核。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-content-block">
+                    <h2 class="section-title">工作与实习经历</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">2024-06 ~ 2026-09</div>
+                            <h3 class="timeline-title">江苏依悦光学有限公司</h3>
+                            <div class="timeline-subtitle">技术部 | 微信小程序运维和网络运维</div>
+                            <div class="timeline-content">
+                                负责微信小程序原生开发、使用 Git
+                                完成小程序版本更新、功能迭代与线上问题排查，保障服务持续稳定运行；独立完成公司局域网部署、服务器环境配置与内部文件共享服务搭建，规范并提高了公司生产资料协同效率。
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2021-09 ~ 2023-09</div>
+                            <h3 class="timeline-title">武警第一机动总队</h3>
+                            <div class="timeline-subtitle">队部 | 文书</div>
+                            <div class="timeline-content">
+                                负责部队内部基层的上传下达、保密文档编写和资料归档工作，培养了极强的纪律性、抗压能力和团队协作精神。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-content-block">
+                    <h2 class="section-title">优质项目经历</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">2025-05 ~ 2025-09</div>
+                            <h3 class="timeline-title">电气学院教学工作量核算系统 (Web Platform)</h3>
+                            <div class="timeline-subtitle">核心开发者 | Spring Boot 3 + React + Vite</div>
+                            <div class="timeline-content">
+                                为高校学院研发的自动化系统，替代传统 Excel 人工核算。<br>
+                                <strong>核心贡献:</strong> 运用 Ant Design ProTable 处理复杂报表，落地严格的多级跨段数据逻辑校验保障脏数据为 0；实现基于 RBAC
+                                的三级权限管控隔离数据访问，并搭建了无纸化线上多级审核流转与自动化 Excel 导出功能。
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2026-01 ~ 2026-03</div>
+                            <h3 class="timeline-title">WePhone - 基于 WebRTC 的实时音视频通话系统</h3>
+                            <div class="timeline-subtitle">个人开源项目 | Node.js + WebRTC + Docker</div>
+                            <div class="timeline-content">
+                                开发一款跨设备的 P2P 实时音视频通话应用。使用 Node.js + Socket.io 构建高并发信令服务器，处理房间管理、SDP 交换及 ICE 转发；编写
+                                Dockerfile 及 Compose 编排文件，实现全应用链路的一键自动化部署。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 贡正阳 (Gong Zhengyang). All Rights Reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.875rem;">Powered by HTML, CSS & JavaScript</p>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

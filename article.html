@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WePhone - 基于 WebRTC 的实时音视频通话应用 - 贡正阳个人博客</title>
+    <!-- 国内 CDN 引入字体图标 -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">GZY<span>.Dev</span></a>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="articles.html" class="active">文章</a>
+                <a href="about.html">关于我</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container" style="max-width: 800px;">
+        <article class="article-content animate-on-scroll">
+            <div class="article-header">
+                <div class="post-meta" style="justify-content: center; gap: 2rem; margin-bottom: 1.5rem;">
+                    <span><i class="far fa-calendar-alt"></i> 2026-03-10</span>
+                    <span><i class="fas fa-folder-open"></i> WebRTC</span>
+                    <span><i class="fas fa-user"></i> 贡正阳</span>
+                </div>
+                <h1 class="article-title">WePhone - 基于 WebRTC 的实时音视频通话应用</h1>
+                <div class="post-tags" style="justify-content: center; margin-top: 1.5rem;">
+                    <span class="tag">WebRTC</span>
+                    <span class="tag">Node.js</span>
+                    <span class="tag">Socket.io</span>
+                    <span class="tag">Docker</span>
+                </div>
+            </div>
+
+            <div class="article-body">
+                <p>在现代 Web 应用开发中，实时音视频通信（Real-Time Communication）的需求日益增长。为了深入探索底层技术原理，并解决跨设备低延迟通信的痛点，我在 2026 年初开发了
+                    <strong>WePhone</strong>——一款基于 WebRTC 协议实现的点对点（P2P）实时音视频通话应用。</p>
+
+                <h2>核心功能特性</h2>
+                <ul>
+                    <li><strong>多端互通：</strong> 运用 WebRTC 原生 API，支持主流浏览器和移动设备间的音视频无缝对接。</li>
+                    <li><strong>超低延迟通信：</strong> 建立 P2P 专用通道，音视频流数据不经服务器中转直接送达对端。</li>
+                    <li><strong>动态编解码优化：</strong> 自适应切换分辨率与码率，实现在弱网环境下的体验最佳化。</li>
+                </ul>
+
+                <h2>系统架构设计</h2>
+                <p>项目的整体架构分为前端客户端、信令服务器（Signaling Server）以及穿透中继服务器（STUN/TURN Server）。</p>
+
+                <h3>信令交换过程 (Signaling)</h3>
+                <p>WebRTC 本身不包含信令的标准实现，因此我选择了 <code>Node.js + Socket.io</code> 来构建高并发并具备容错能力的信令服务器。主要处理：</p>
+                <ul>
+                    <li><strong>房间管理机制：</strong> 客户端通过指定房间号加入逻辑隔离的会话空间。</li>
+                    <li><strong>SDP 交换：</strong> 处理 Offer/Answer 模式下的媒体能力协商。</li>
+                    <li><strong>ICE 候选者转发：</strong> 在建立 P2P 通信前，及时同步客户端收集到的网络连通性信息。</li>
+                </ul>
+
+                <h3>代码实现片段</h3>
+                <p>以下是服务端处理信令交换的核心逻辑示例：</p>
+                <pre><code>// Socket.io 信令交换处理
+io.on('connection', socket => {
+  socket.on('join-room', (roomId, userId) => {
+    socket.join(roomId);
+    socket.to(roomId).emit('user-connected', userId);
+    
+    // 监听 Offer / Answer
+    socket.on('offer', (payload) => {
+      io.to(payload.target).emit('offer', payload);
+    });
+
+    socket.on('answer', (payload) => {
+      io.to(payload.target).emit('answer', payload);
+    });
+
+    // 监听 ICE Candidate 转发
+    socket.on('ice-candidate', (payload) => {
+      io.to(payload.target).emit('ice-candidate', payload);
+    });
+    
+    socket.on('disconnect', () => {
+      socket.to(roomId).emit('user-disconnected', userId);
+    });
+  });
+});</code></pre>
+
+                <h2>部署方案 (Docker Compose)</h2>
+                <p>为了免除繁杂的环境配置，提升部署效率，项目采用了容器化部署方案。通过编写 Dockerfile 将 Node.js 服务封装，配合 Docker Compose 一键拉起应用层以及 Coturn
+                    (TURN/STUN 服务)，实现了高度的自动化：</p>
+
+                <pre><code>version: '3.8'
+services:
+  wephone-signaling:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    restart: always
+
+  turn-server:
+    image: coturn/coturn
+    ports:
+      - "3478:3478/udp"
+    command: >
+      -n --log-file=stdout --min-port=49152 --max-port=65535 
+      --user=gzy:wephone --realm=gede.asia</code></pre>
+
+                <h2>项目总结与展望</h2>
+                <p>通过本次项目的开发，彻底打通了从底层网络原理到工程化落地的全栈流程。在实现 P2P 实时通信的核心逻辑之余，我也累积了服务端运维和自动化部署的宝贵经验。</p>
+                <p><strong>开源仓库地址：</strong> <a href="https://github.com/GZY-q/WePhone" target="_blank"
+                        style="color: var(--primary-color);">https://github.com/GZY-q/WePhone</a></p>
+                <p><strong>线上预览地址：</strong> <a href="https://gede.asia" target="_blank"
+                        style="color: var(--primary-color);">https://gede.asia</a></p>
+            </div>
+
+            <div
+                style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color); text-align: center;">
+                <a href="articles.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> 返回文章列表</a>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 贡正阳 (Gong Zhengyang). All Rights Reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.875rem;">Powered by HTML, CSS & JavaScript</p>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

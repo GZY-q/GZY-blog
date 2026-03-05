@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贡正阳 - 个人博客</title>
+    <!-- 使用国内 CDN 引入字体图标 -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">GZY<span>.Dev</span></a>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html" class="active">首页</a>
+                <a href="articles.html">文章</a>
+                <a href="about.html">关于我</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">你好，我是 <span>贡正阳</span></h1>
+                <p class="hero-subtitle">软件工程专业应届毕业生，专注于Web全栈开发与网络运维。热衷于运用前沿技术解决实际问题，致力于打造高效、优雅的应用体验。</p>
+                <div class="hero-actions">
+                    <a href="about.html" class="btn btn-primary"><i class="fas fa-user-circle"></i> 了解更多</a>
+                    <a href="articles.html" class="btn btn-outline"><i class="fas fa-newspaper"></i> 阅读文章</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="avatar-container">
+                    <i class="fas fa-user-astronaut"></i>
+                </div>
+            </div>
+        </section>
+
+        <section class="recent-posts" style="margin-top: 5rem;">
+            <h2 class="section-title animate-on-scroll">最新项目与文章</h2>
+            <div class="posts-grid">
+                <!-- Post 1 -->
+                <article class="post-card animate-on-scroll">
+                    <div class="post-card-content">
+                        <div class="post-meta">
+                            <span>2025-09</span>
+                            <span><i class="fas fa-code"></i> 全栈开发</span>
+                        </div>
+                        <h3 class="post-title"><a href="article.html">教学院教学工作量核算系统 Web 平台实践</a></h3>
+                        <p class="post-excerpt">为高校研发的教学工作量自动化审批与核算平台。采用 Spring Boot 3 与 React + Vite 技术栈，彻底解决传统 Excel 易错、效率低下等痛点。引入基于 RBAC 的三级权限体系和工作流引擎...</p>
+                        <div class="post-tags">
+                            <span class="tag">Spring Boot</span>
+                            <span class="tag">React</span>
+                            <span class="tag">系统设计</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="post-card animate-on-scroll" style="transition-delay: 0.1s;">
+                    <div class="post-card-content">
+                        <div class="post-meta">
+                            <span>2026-03</span>
+                            <span><i class="fas fa-network-wired"></i> WebRTC</span>
+                        </div>
+                        <h3 class="post-title"><a href="article.html">WePhone - 基于 WebRTC 的实时音视频通话应用</a></h3>
+                        <p class="post-excerpt">深入探索 P2P 实时通信技术。基于 Node.js 与 Socket.io 搭建信令服务器，实现房间流转与 SDP/ICE 交换，最终通过 Docker 与 Compose 实现 TURN 服务与应用的一键整合部署...</p>
+                        <div class="post-tags">
+                            <span class="tag">WebRTC</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">Docker</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="post-card animate-on-scroll" style="transition-delay: 0.2s;">
+                    <div class="post-card-content">
+                        <div class="post-meta">
+                            <span>2024-06</span>
+                            <span><i class="fas fa-server"></i> 运维纪实</span>
+                        </div>
+                        <h3 class="post-title"><a href="article.html">企业级网络基础运维与小程序开发实践</a></h3>
+                        <p class="post-excerpt">在实习期间独立完成局域网与文件共享服务的从零部署，同时承担微信小程序的原生功能迭代与版本发布任务，保障了企业生产协作的顺利进行...</p>
+                        <div class="post-tags">
+                            <span class="tag">网络运维</span>
+                            <span class="tag">微信小程序</span>
+                            <span class="tag">Git</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 贡正阳 (Gong Zhengyang). All Rights Reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.875rem;">Powered by HTML, CSS & JavaScript</p>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>

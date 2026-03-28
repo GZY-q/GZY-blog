@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WePhone - 基于 WebRTC 的实时音视频通话应用 - 贡正阳个人博客</title>
+    <title>小米"一次性"水杯广告推广 — 当天登上平台热搜 - 贡正阳个人博客</title>
     <!-- 国内 CDN 引入字体图标 -->
     <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
@@ -13,7 +13,7 @@
 <body>
     <header>
         <div class="nav-container">
-            <a href="index.html" class="logo">GZY<span>.Dev</span></a>
+            <a href="index.html" class="logo">GZY<span>.Studio</span></a>
             <div class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
             </div>
@@ -29,97 +29,60 @@
         <article class="article-content animate-on-scroll">
             <div class="article-header">
                 <div class="post-meta" style="justify-content: center; gap: 2rem; margin-bottom: 1.5rem;">
-                    <span><i class="far fa-calendar-alt"></i> 2026-03-10</span>
-                    <span><i class="fas fa-folder-open"></i> WebRTC</span>
+                    <span><i class="far fa-calendar-alt"></i> 2025-06-15</span>
+                    <span><i class="fas fa-fire"></i> 广告推广</span>
                     <span><i class="fas fa-user"></i> 贡正阳</span>
                 </div>
-                <h1 class="article-title">WePhone - 基于 WebRTC 的实时音视频通话应用</h1>
+                <h1 class="article-title">小米"一次性"水杯广告推广 — 当天登上平台热搜</h1>
                 <div class="post-tags" style="justify-content: center; margin-top: 1.5rem;">
-                    <span class="tag">WebRTC</span>
-                    <span class="tag">Node.js</span>
-                    <span class="tag">Socket.io</span>
-                    <span class="tag">Docker</span>
+                    <span class="tag">Final Cut Pro</span>
+                    <span class="tag">抖音推广</span>
+                    <span class="tag">视频制作</span>
+                    <span class="tag">爆款内容</span>
                 </div>
             </div>
 
             <div class="article-body">
-                <p>在现代 Web 应用开发中，实时音视频通信（Real-Time Communication）的需求日益增长。为了深入探索底层技术原理，并解决跨设备低延迟通信的痛点，我在 2026 年初开发了
-                    <strong>WePhone</strong>——一款基于 WebRTC 协议实现的点对点（P2P）实时音视频通话应用。</p>
+                <p>在短视频红海时代，如何让一款看似平平无奇的日常用品脱颖而出？2025 年 3 月至 6 月，我作为视频内容策划与制作方，承接了小米相关商家的商品推流项目。其中最成功的案例，当属<strong>小米"一次性"水杯</strong>的广告视频推广。</p>
 
-                <h2>核心功能特性</h2>
+                <h2>项目背景与痛点分析</h2>
+                <p>商家面临的主要问题是：水杯作为低客单价、高替代性的快消品，传统的"产品功能展示"很难在短时间内在抖音等平台抓人眼球。我们需要另辟蹊径，寻找能够引发广泛讨论的切入点。</p>
                 <ul>
-                    <li><strong>多端互通：</strong> 运用 WebRTC 原生 API，支持主流浏览器和移动设备间的音视频无缝对接。</li>
-                    <li><strong>超低延迟通信：</strong> 建立 P2P 专用通道，音视频流数据不经服务器中转直接送达对端。</li>
-                    <li><strong>动态编解码优化：</strong> 自适应切换分辨率与码率，实现在弱网环境下的体验最佳化。</li>
+                    <li><strong>产品特性：</strong> 简约设计、主打便捷。</li>
+                    <li><strong>目标受众：</strong> 追求高效生活的年轻群体、容易被痛点营销打动的消费者。</li>
+                    <li><strong>营销挑战：</strong> 视频必须在黄金 3 秒内留住用户，并具备自传播能力。</li>
                 </ul>
 
-                <h2>系统架构设计</h2>
-                <p>项目的整体架构分为前端客户端、信令服务器（Signaling Server）以及穿透中继服务器（STUN/TURN Server）。</p>
+                <h2>内容策划与制作流程</h2>
+                <p>在经过多轮头脑风暴后，我决定打出"一次性"水杯的噱头——并非真的只能用一次，而是利用夸张反差感（如极为耐用的质量与"一次性"概念的冲撞）来制造悬念与槽点，吸引评论互动。</p>
 
-                <h3>信令交换过程 (Signaling)</h3>
-                <p>WebRTC 本身不包含信令的标准实现，因此我选择了 <code>Node.js + Socket.io</code> 来构建高并发并具备容错能力的信令服务器。主要处理：</p>
+                <h3>1. 脚本打磨与拍摄准备</h3>
+                <p>制定了详细的分镜头脚本，核心是通过快节奏的剪辑与高频的视觉冲击来强化重点。在拍摄设备上，选用了高规格单反相机搭配专业布光，保证画面的高质量和质感。</p>
+
+                <h3>2. 后期制作 (Final Cut Pro & 剪映)</h3>
+                <p>为了达到最佳的完播率，后期剪辑采用了以下策略：</p>
                 <ul>
-                    <li><strong>房间管理机制：</strong> 客户端通过指定房间号加入逻辑隔离的会话空间。</li>
-                    <li><strong>SDP 交换：</strong> 处理 Offer/Answer 模式下的媒体能力协商。</li>
-                    <li><strong>ICE 候选者转发：</strong> 在建立 P2P 通信前，及时同步客户端收集到的网络连通性信息。</li>
+                    <li><strong>音效卡点：</strong> 结合抖音热门洗脑 BGM，关键动作全部踩点，极大地增强了观看爽感。</li>
+                    <li><strong>吸睛花字：</strong> 使用醒目的特效字幕，直接抛出"争议点"，引导用户进入评论区辩论。</li>
+                    <li><strong>画外音包装：</strong> 配合 AI 语音合成，以及本人录制的具有感染力的配音，增加真实感。</li>
                 </ul>
 
-                <h3>代码实现片段</h3>
-                <p>以下是服务端处理信令交换的核心逻辑示例：</p>
-                <pre><code>// Socket.io 信令交换处理
-io.on('connection', socket => {
-  socket.on('join-room', (roomId, userId) => {
-    socket.join(roomId);
-    socket.to(roomId).emit('user-connected', userId);
-    
-    // 监听 Offer / Answer
-    socket.on('offer', (payload) => {
-      io.to(payload.target).emit('offer', payload);
-    });
+                <h2>数据表现与复盘</h2>
+                <p>视频在多矩阵账号同步推送后，效果远超预期。精准抓住了产品亮点与争议点，视频发布<strong>当天就直接登上了平台热搜前 10</strong>。</p>
+                
+                <div style="background-color: var(--card-bg); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); margin: 1.5rem 0;">
+                    <h3 style="margin-top: 0; color: var(--primary-color);">核心数据指标：</h3>
+                    <ul style="margin-bottom: 0;">
+                        <li><strong>单条视频播放量：</strong> 突破 <span style="color: #f43f5e; font-weight: bold; font-size: 1.2rem;">275万</span> 播放</li>
+                        <li><strong>互动率转化：</strong> 高赞高评，大幅带动了挂载购物车的商品点击率</li>
+                        <li><strong>商业价值：</strong> 被拼多多以及抖音商家直接采用，用于核心产品带货，转化效果显著</li>
+                    </ul>
+                </div>
 
-    socket.on('answer', (payload) => {
-      io.to(payload.target).emit('answer', payload);
-    });
+                <p>这次的成功并非偶然，它验证了在当前的内容生态下："情绪价值 + 高品质视觉 + 巧妙的槽点设计 = 爆款"。这套完整的视频内容策划和制作流程，不仅保证了交付质量，也极大地提升了商业变现的效率。</p>
 
-    // 监听 ICE Candidate 转发
-    socket.on('ice-candidate', (payload) => {
-      io.to(payload.target).emit('ice-candidate', payload);
-    });
-    
-    socket.on('disconnect', () => {
-      socket.to(roomId).emit('user-disconnected', userId);
-    });
-  });
-});</code></pre>
-
-                <h2>部署方案 (Docker Compose)</h2>
-                <p>为了免除繁杂的环境配置，提升部署效率，项目采用了容器化部署方案。通过编写 Dockerfile 将 Node.js 服务封装，配合 Docker Compose 一键拉起应用层以及 Coturn
-                    (TURN/STUN 服务)，实现了高度的自动化：</p>
-
-                <pre><code>version: '3.8'
-services:
-  wephone-signaling:
-    build: .
-    ports:
-      - "3000:3000"
-    environment:
-      - NODE_ENV=production
-    restart: always
-
-  turn-server:
-    image: coturn/coturn
-    ports:
-      - "3478:3478/udp"
-    command: >
-      -n --log-file=stdout --min-port=49152 --max-port=65535 
-      --user=gzy:wephone --realm=gede.asia</code></pre>
-
-                <h2>项目总结与展望</h2>
-                <p>通过本次项目的开发，彻底打通了从底层网络原理到工程化落地的全栈流程。在实现 P2P 实时通信的核心逻辑之余，我也累积了服务端运维和自动化部署的宝贵经验。</p>
-                <p><strong>开源仓库地址：</strong> <a href="https://github.com/GZY-q/WePhone" target="_blank"
-                        style="color: var(--primary-color);">https://github.com/GZY-q/WePhone</a></p>
-                <p><strong>线上预览地址：</strong> <a href="https://gede.asia" target="_blank"
-                        style="color: var(--primary-color);">https://gede.asia</a></p>
+                <p><strong>项目原始链接：</strong> <a href="https://www.douyin.com/user/55003206561" target="_blank"
+                        style="color: var(--primary-color);">抖音平台 ID:55003206561 — 小米水杯推广视频</a></p>
             </div>
 
             <div
